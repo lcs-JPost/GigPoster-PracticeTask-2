@@ -34,6 +34,89 @@ let lightRed = Color(hue: 10, saturation: 80, brightness: 80, alpha: 75)
 
 // Begin your solution here...
 
+// change the background
+
+canvas.fillColor = yellow
+canvas.drawRectangle(at: Point(x: 0, y: 0), width: 400, height: 600)
+
+// draw the text
+
+canvas.drawText(message: "subhumans", at: Point(x: 10, y: 325), size: 45)
+
+canvas.drawText(message: "friday, april 13 1984\nadvance $6.50, door $7.50\nno age limit", at: Point(x: 10, y: 398), size: 10)
+
+canvas.drawText(message: "at olympic auditorium\n1801 s. grand ave.\nlos angeles, california", at: Point(x: 150, y: 398), size: 10)
+
+canvas.drawText(message: "with the tourists\nmulti death corperations\nnew regime & red scare", at: Point(x: 275, y: 398), size: 10)
+
+//// draw a grid for reference
+//for y in stride(from: 0, through: 600, by: 50){
+//    y
+//    canvas.drawLine(from: Point(x: 0, y: y ), to: Point(x: 400, y: y ))
+//}
+////next, draw the vertical lines
+//for x in stride(from: 0, through: 400, by: 50){
+//    x
+//    canvas.drawLine(from: Point(x: x, y: 0), to: Point(x: x, y: 600))
+//}
+
+// disable borders
+canvas.drawShapesWithBorders = false
+// draw the first row, the lowest, of shapes
+for PolygonX in stride(from: -85, through: 535, by: 160){
+    var polygonVertices: [Point] = []
+    polygonVertices.append(Point(x: PolygonX, y: 150))
+    polygonVertices.append(Point(x: PolygonX + 150, y: 150))
+    polygonVertices.append(Point(x: PolygonX + 100, y: 50))
+    polygonVertices.append(Point(x: PolygonX - 50, y: 50))
+
+    print(PolygonX)
+    if PolygonX == -85 || PolygonX == 235 {
+    
+    canvas.fillColor = brown
+    
+    }
+    if PolygonX == 75 || PolygonX == 395 {
+        canvas.fillColor = purple
+    }
+    canvas.drawCustomShape(with: polygonVertices)
+}
+
+// draw the second row, the highest
+for PolygonX2 in stride(from: -85, through: 535, by: 160){
+    var polygonVertices2: [Point] = []
+    polygonVertices2.append(Point(x: PolygonX2, y: 325))
+    polygonVertices2.append(Point(x: PolygonX2 + 150, y: 325))
+    polygonVertices2.append(Point(x: PolygonX2 + 100, y: 225))
+    polygonVertices2.append(Point(x: PolygonX2 - 50, y: 225))
+
+    print(PolygonX2)
+    if PolygonX2 == -85 || PolygonX2 == 235 {
+    
+    canvas.fillColor = brown
+    
+    }
+    if PolygonX2 == 75 || PolygonX2 == 395 {
+        canvas.fillColor = purple
+    }
+    canvas.drawCustomShape(with: polygonVertices2)
+}
+
+
+// draw the red row
+canvas.fillColor = lightRed
+for PolygonX in stride(from: -85, through: 535, by: 160){
+    var polygonVertices3: [Point] = []
+    polygonVertices3.append(Point(x: PolygonX, y: 238))
+    polygonVertices3.append(Point(x: PolygonX + 150, y: 238))
+    polygonVertices3.append(Point(x: PolygonX + 100, y: 138))
+    polygonVertices3.append(Point(x: PolygonX - 50, y: 138))
+
+    
+    
+
+    canvas.drawCustomShape(with: polygonVertices3)
+}
 
 /*:
  ## Use Source Control
